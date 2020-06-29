@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище DeliveryModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Autorization">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DrinkSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dish" Type="nvarchar(max)" />
+    <Property Name="Сomposition" Type="nvarchar(max)" />
+    <Property Name="Prise" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ProductTraking">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdSalad" Type="int" />
+    <Property Name="IdSecondCourse" Type="int" />
+    <Property Name="IdSoups" Type="int" />
+    <Property Name="IdDrink" Type="int" />
+    <Property Name="IdWorker" Type="int" />
+  </EntityType>
+  <EntityType Name="SaladSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dish" Type="nvarchar(max)" />
+    <Property Name="Сomposition" Type="nvarchar(max)" />
+    <Property Name="Prise" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SecondCourseSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dish" Type="nvarchar(max)" />
+    <Property Name="Сomposition" Type="nvarchar(max)" />
+    <Property Name="Prise" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SoupsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dish" Type="nvarchar(max)" />
+    <Property Name="Сomposition" Type="nvarchar(max)" />
+    <Property Name="Prise" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WorkerSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" />
+    <Property Name="MiddleName" Type="nvarchar(max)" />
+    <Property Name="LastName" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_ProductTraking_DrinkSet">
+    <End Role="DrinkSet" Type="Self.DrinkSet" Multiplicity="0..1" />
+    <End Role="ProductTraking" Type="Self.ProductTraking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DrinkSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductTraking">
+        <PropertyRef Name="IdDrink" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductTraking_SaladSet">
+    <End Role="SaladSet" Type="Self.SaladSet" Multiplicity="0..1" />
+    <End Role="ProductTraking" Type="Self.ProductTraking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SaladSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductTraking">
+        <PropertyRef Name="IdSalad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductTraking_SecondCourseSet">
+    <End Role="SecondCourseSet" Type="Self.SecondCourseSet" Multiplicity="0..1" />
+    <End Role="ProductTraking" Type="Self.ProductTraking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SecondCourseSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductTraking">
+        <PropertyRef Name="IdSecondCourse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductTraking_SoupsSet">
+    <End Role="SoupsSet" Type="Self.SoupsSet" Multiplicity="0..1" />
+    <End Role="ProductTraking" Type="Self.ProductTraking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SoupsSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductTraking">
+        <PropertyRef Name="IdSoups" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductTraking_WorkerSet">
+    <End Role="WorkerSet" Type="Self.WorkerSet" Multiplicity="0..1" />
+    <End Role="ProductTraking" Type="Self.ProductTraking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkerSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductTraking">
+        <PropertyRef Name="IdWorker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище DeliveryModelContainer">
+    <EntitySet Name="Autorization" EntityType="Self.Autorization" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DrinkSet" EntityType="Self.DrinkSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductTraking" EntityType="Self.ProductTraking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SaladSet" EntityType="Self.SaladSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SecondCourseSet" EntityType="Self.SecondCourseSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SoupsSet" EntityType="Self.SoupsSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkerSet" EntityType="Self.WorkerSet" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ProductTraking_DrinkSet" Association="Self.FK_ProductTraking_DrinkSet">
+      <End Role="DrinkSet" EntitySet="DrinkSet" />
+      <End Role="ProductTraking" EntitySet="ProductTraking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductTraking_SaladSet" Association="Self.FK_ProductTraking_SaladSet">
+      <End Role="SaladSet" EntitySet="SaladSet" />
+      <End Role="ProductTraking" EntitySet="ProductTraking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductTraking_SecondCourseSet" Association="Self.FK_ProductTraking_SecondCourseSet">
+      <End Role="SecondCourseSet" EntitySet="SecondCourseSet" />
+      <End Role="ProductTraking" EntitySet="ProductTraking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductTraking_SoupsSet" Association="Self.FK_ProductTraking_SoupsSet">
+      <End Role="SoupsSet" EntitySet="SoupsSet" />
+      <End Role="ProductTraking" EntitySet="ProductTraking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductTraking_WorkerSet" Association="Self.FK_ProductTraking_WorkerSet">
+      <End Role="WorkerSet" EntitySet="WorkerSet" />
+      <End Role="ProductTraking" EntitySet="ProductTraking" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

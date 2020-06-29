@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище DeliveryModelContainer" CdmEntityContainer="DeliveryEntities10">
+    <EntitySetMapping Name="Autorization">
+      <EntityTypeMapping TypeName="DeliveryModel.Autorization">
+        <MappingFragment StoreEntitySet="Autorization">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DrinkSet">
+      <EntityTypeMapping TypeName="DeliveryModel.DrinkSet">
+        <MappingFragment StoreEntitySet="DrinkSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Dish" ColumnName="Dish" />
+          <ScalarProperty Name="Сomposition" ColumnName="Сomposition" />
+          <ScalarProperty Name="Prise" ColumnName="Prise" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductTraking">
+      <EntityTypeMapping TypeName="DeliveryModel.ProductTraking">
+        <MappingFragment StoreEntitySet="ProductTraking">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdSalad" ColumnName="IdSalad" />
+          <ScalarProperty Name="IdSecondCourse" ColumnName="IdSecondCourse" />
+          <ScalarProperty Name="IdSoups" ColumnName="IdSoups" />
+          <ScalarProperty Name="IdDrink" ColumnName="IdDrink" />
+          <ScalarProperty Name="IdWorker" ColumnName="IdWorker" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaladSet">
+      <EntityTypeMapping TypeName="DeliveryModel.SaladSet">
+        <MappingFragment StoreEntitySet="SaladSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Dish" ColumnName="Dish" />
+          <ScalarProperty Name="Сomposition" ColumnName="Сomposition" />
+          <ScalarProperty Name="Prise" ColumnName="Prise" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecondCourseSet">
+      <EntityTypeMapping TypeName="DeliveryModel.SecondCourseSet">
+        <MappingFragment StoreEntitySet="SecondCourseSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Dish" ColumnName="Dish" />
+          <ScalarProperty Name="Сomposition" ColumnName="Сomposition" />
+          <ScalarProperty Name="Prise" ColumnName="Prise" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SoupsSet">
+      <EntityTypeMapping TypeName="DeliveryModel.SoupsSet">
+        <MappingFragment StoreEntitySet="SoupsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Dish" ColumnName="Dish" />
+          <ScalarProperty Name="Сomposition" ColumnName="Сomposition" />
+          <ScalarProperty Name="Prise" ColumnName="Prise" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkerSet">
+      <EntityTypeMapping TypeName="DeliveryModel.WorkerSet">
+        <MappingFragment StoreEntitySet="WorkerSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
